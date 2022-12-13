@@ -10,14 +10,9 @@ function App() {
         <p>
           Hello! This is a test!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        {/* <a>
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
