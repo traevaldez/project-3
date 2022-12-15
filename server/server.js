@@ -1,18 +1,4 @@
 const express = require('express');
-<<<<<<< HEAD
-const app = express();
-const PORT = process.env.PORT || 3001;
-
-app.use(express.static('../client/dist'));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-require('./routes/htmlRoutes.js')(app);
-
-app.listen(PORT, function() {
-    console.log(`Now listening on port: http://localhost:${PORT}`)
-})
-=======
 const {ApolloServer} = require('apollo-server-express');
 const path = require('path');
 
@@ -56,4 +42,3 @@ const startApolloServer = async (typeDefs, resolvers) => {
   
   // Call the async function to start the server
   startApolloServer(typeDefs, resolvers);
->>>>>>> max-branch
