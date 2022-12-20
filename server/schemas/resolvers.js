@@ -8,7 +8,7 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
-          .populate('Comments')
+          .populate('comments')
           .populate('friends');
 
         return userData;
@@ -19,20 +19,20 @@ const resolvers = {
     users: async () => {
       return User.find()
         .select('-__v -password')
-        .populate('Comments')
+        .populate('comments')
         .populate('friends');
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
         .populate('friends')
-        .populate('Comments');
+        .populate('comments');
     },
-    Comments: async (parent, { username }) => {
+    comments: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Comment.find(params).sort({ createdAt: -1 });
     },
-    Comment: async (parent, { _id }) => {
+    comment: async (parent, { _id }) => {
       return Comment.findOne({ _id });
     }
   },
@@ -62,23 +62,23 @@ const resolvers = {
     },
     addComment: async (parent, args, context) => {
       if (context.user) {
-        const Comment = await Comment.create({ ...args, username: context.user.username });
+        const comment = await Comment.create({ ...args, username: context.user.username });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { Comments: Comment._id } },
+          { $push: { comments: comment._id } },
           { new: true }
         );
 
-        return Comment;
+        return comment;
       }
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    addReaction: async (parent, { CommentId, reactionBody }, context) => {
+    addReaction: async (parent, { commentId, reactionBody }, context) => {
       if (context.user) {
         const updatedComment = await Comment.findOneAndUpdate(
-          { _id: CommentId },
+          { _id: commentId },
           { $push: { reactions: { reactionBody, username: context.user.username } } },
           { new: true, runValidators: true }
         );

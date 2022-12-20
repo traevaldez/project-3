@@ -8,7 +8,7 @@ import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_COMMENT } from '../utils/queries';
 
-const singleComment = (props) => {
+const SingleComment = (props) => {
   const { id: commentId } = useParams();
 
   const { loading, data } = useQuery(QUERY_COMMENT, {
@@ -44,4 +44,4 @@ const singleComment = (props) => {
   );
 };
 
-export default singleComment;
+export default SingleComment;

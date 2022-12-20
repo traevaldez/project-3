@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const commentList = ({ comments, title }) => {
+const CommentList = ({ comments, title }) => {
   if (!comments.length) {
     return <h3>No Comments Yet</h3>;
   }
@@ -37,4 +37,4 @@ const commentList = ({ comments, title }) => {
   );
 };
 
-export default commentList;
+export default CommentList;

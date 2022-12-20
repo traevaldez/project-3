@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_COMMENT } from '../../utils/mutations';
 import { QUERY_COMMENTS, QUERY_ME } from '../../utils/queries';
 
-const commentForm = () => {
+const CommentForm = () => {
   const [commentText, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -83,4 +83,4 @@ const commentForm = () => {
   );
 };
 
-export default commentForm;
+export default CommentForm;

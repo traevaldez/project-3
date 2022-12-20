@@ -32,6 +32,6 @@ commentSchema.virtual('reactionCount').get(function() {
   return this.reactions.length;
 });
 
-const comment = model('comment', commentSchema);
+const Comment = model('Comment', commentSchema);
 
-module.exports = comment;
+module.exports = Comment;

@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
-import singleComment from './pages/singleComment';
+import SingleComment from './pages/SingleComment';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 
@@ -63,7 +63,7 @@ function App() {
               />
               <Route 
                 path="/comment/:id" 
-                element={<singleComment />} 
+                element={<SingleComment />} 
               />
               <Route 
                 path="*" 

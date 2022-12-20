@@ -1,14 +1,14 @@
 import React from 'react';
-import commentList from '../components/commentList';
-import commentForm from '../components/commentForm';
+import CommentList from '../components/CommentList';
+import CommentForm from '../components/CommentForm';
 import FriendList from '../components/FriendList';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
-import { QUERY_comments, QUERY_ME_BASIC } from '../utils/queries';
+import { QUERY_COMMENTS, QUERY_ME_BASIC } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_comments);
+  const { loading, data } = useQuery(QUERY_COMMENTS);
   const { data: userData } = useQuery(QUERY_ME_BASIC);
   const comments = data?.comments || [];
 
@@ -19,14 +19,14 @@ const Home = () => {
       <div className="flex-row justify-space-between">
         {loggedIn && (
           <div className="col-12 mb-3">
-            <commentForm />
+            <CommentForm />
           </div>
         )}
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <commentList
+            <CommentList
               comments={comments}
               title="Comment for the moment"
             />
