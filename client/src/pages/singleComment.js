@@ -45,4 +45,3 @@ const SingleComment = (props) => {
 };
 
 export default SingleComment;
-
