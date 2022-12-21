@@ -33,7 +33,7 @@ body {
   line-height: 1.5;
   font-size: 20px;
   color: var(--dark);
-  background-color: #f3fffee1;
+  background-color: #eefcfbe1;
 }
 
 h1,
@@ -99,7 +99,7 @@ nav a {
 
 nav a:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: var(--light);
 }
 
 .page-title {
