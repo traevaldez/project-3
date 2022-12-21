@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
-import CommentForm from '../components/commentForm';
-import CommentList from '../components/commentList';
+import CommentForm from '../components/CommentForm';
+import CommentList from '../components/CommentList';
 import FriendList from '../components/FriendList';
 
 import { useQuery, useMutation } from '@apollo/client';
