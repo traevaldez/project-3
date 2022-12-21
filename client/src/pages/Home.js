@@ -1,6 +1,6 @@
 import React from 'react';
-import CommentList from '../components/CommentList';
-import CommentForm from '../components/CommentForm';
+import CommentList from '../components/commentList';
+import CommentForm from '../components/commentForm';
 import FriendList from '../components/FriendList';
 
 import Auth from '../utils/auth';
