@@ -28,7 +28,7 @@ const SingleComment = (props) => {
           <span style={{ fontWeight: 700 }} className="text-light">
             {comment.username}
           </span>{' '}
-          comment on {comment.createdAt}
+          commented on {comment.createdAt}
         </p>
         <div className="card-body">
           <p>{comment.commentText}</p>

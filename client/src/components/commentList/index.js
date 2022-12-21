@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CommentList = ({ comments, title }) => {
   if (!comments.length) {
-    return <h3>No Comments Yet</h3>;
+    return <h3>No Posts Yet</h3>;
   }
 
   return (
@@ -20,7 +20,7 @@ const CommentList = ({ comments, title }) => {
               >
                 {comment.username}
               </Link>{' '}
-              comment on {comment.createdAt}
+              commented on {comment.createdAt}
             </p>
             <div className="card-body">
               <Link to={`/comment/${comment._id}`}>

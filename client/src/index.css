@@ -1,12 +1,12 @@
 
 :root {
   
-  --primary: #f3f3ef;
+  --primary: #b593dd;
   --secondary: #776cf1;
-  --tertiary: #778281;
-  --quatrinary: #d2d9d9;
-  --light: #bab6a6;
-  --dark: #000000;
+  --tertiary: #000000;
+  --quatrinary: #eefefe;
+  --light: #040404;
+  --dark: #f6f0f0;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -18,11 +18,13 @@
 
 * {
   box-sizing: border-box;
+
 }
 
 html,
 body {
   min-height: 100%;
+  background-image: url("background.png");
 }
 
 body {
@@ -33,7 +35,7 @@ body {
   line-height: 1.5;
   font-size: 20px;
   color: var(--dark);
-  background-color: #f3fffee1;
+  background-color: #eefcfbe1;
 }
 
 h1,
@@ -99,7 +101,7 @@ nav a {
 
 nav a:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: var(--light);
 }
 
 .page-title {
@@ -207,7 +209,7 @@ nav a:hover {
   height: 18px;
   border: 2px solid var(--secondary);
   border-radius: 100%;
-  background: #fff;
+  background: rgb(255, 255, 255);
 }
 [type='radio']:checked + label:after,
 [type='radio']:not(:checked) + label:after {
